@@ -1,0 +1,2524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="EduNotes Pro">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#3B82F6">
+    
+    <title>EduNotes Pro - Asistente Móvil para Profesores</title>
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiRWR1Tm90ZXMgUHJvIiwic2hvcnRfbmFtZSI6IkVkdU5vdGVzIiwic3RhcnRfdXJsIjoiLyIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiNmZmZmZmYiLCJ0aGVtZV9jb2xvciI6IiMzQjgyRjYiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTVRJNElpQm9aV2xuYUhROUlqRXlPQ0lpSUhacFpYZENiM2c5SWpBZ01DQXhNamd1TURBd01EQXhNamd1TURBd01EQWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQR1JsWm5NK1BHeHBibVZoY2tkeVlXUnBaVzUwSUdsa1BTSm5jbUZrSWlCNE1UMGlNQ1VpSUhreFBTSXdKU0lpSUhnelBTSXhNREFsSWlCNU1qMGlNQ1VpUGp4emRHOXdJRzltWm5ObGREMGlNQ1VpSUhOMGIzQXRZMjlzYjNJOUlpTXpRamcwUmpZaUx6NDhjM1J2Y0NCdlptWnpaWFE5SWpFd01DVWlJSE4wYjNBdFkyOXNiM0k5SWlNeE5UUXdRVVlpTHo0OEwyeHBibVZoY2tkeVlXUnBaVzUwUGp3dlpHVm1jejQ4Y21WamRDQjNhV1IwYUQwaU1USTRJaUJvWldsbmFIUTlJakV5T0NJZ1ptbHNiRDBpZFhKc0tDTm5jbUZrS1NJdmVqNDhkR1Y0ZENCNFBTSTJOQ0lnZVQwaU5qUWlJSFJsZUhRdFlXNWphRzl5UFNKdGFXUmtiR1VpSUdacGJHdzlJaU0zUmpkR1JqY2lJR1p2Ym5RdGMybDZaVDBpTXpaaUlHWnZiblF0ZDJWcFoyaDBQU0ppYjJ4a0lqNDhkSE53WVc0K1BIUmxlSFFnZUQwaU5qUWlJSGs5SWpnMElpQm1hV3hzUFNKamRYSnlaVzUwUTI5c2IzSWlQaUJmUEM5MFpYaDBQand2ZEhOd1lXNCtQQzlsZUdRK1BDOTBaWGgwUGp3dmNtVmpkRDQ4TDNOMlp6ND0iLCJzaXplcyI6IjEyOHgxMjgiLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCJ9XX0=">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOC4wMDAwMTI4LjAwMDAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMzQjgyRjYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMxRTQwQUYiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgZmlsbD0idXJsKCNncmFkKSIvPjx0ZXh0IHg9IjY0IiB5PSI2NCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzdGN0Y3RjciIGZvbnQtc2l6ZT0iMzZiIiBmb250LXdlaWdodD0iYm9sZCI+PHRzcGFuPjx0ZXh0IHg9IjY0IiB5PSI4NCIgZmlsbD0iY3VycmVudENvbG9yIj7wn5OSPC90ZXh0PjwvdHNwYW4+PC90ZXh0Pjwvc3ZnPg==">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            overscroll-behavior: none;
+        }
+        
+        /* iOS Safe Area Support */
+        .safe-area-top {
+            padding-top: env(safe-area-inset-top);
+        }
+        
+        .safe-area-bottom {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+        
+        .safe-area-left {
+            padding-left: env(safe-area-inset-left);
+        }
+        
+        .safe-area-right {
+            padding-right: env(safe-area-inset-right);
+        }
+        
+        /* Mobile-first gradients */
+        .gradient-bg {
+            background: linear-gradient(135deg, #3B82F6 0%, #1E40AF 100%);
+        }
+        
+        .gradient-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        /* Native mobile animations */
+        .mobile-bounce {
+            animation: mobileBounce 0.3s ease-out;
+        }
+        
+        @keyframes mobileBounce {
+            0% { transform: scale(0.95); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        .mobile-slide-up {
+            animation: mobileSlideUp 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        @keyframes mobileSlideUp {
+            from { 
+                transform: translateY(100%); 
+                opacity: 0; 
+            }
+            to { 
+                transform: translateY(0); 
+                opacity: 1; 
+            }
+        }
+        
+        .mobile-fade-in {
+            animation: mobileFadeIn 0.3s ease-in-out;
+        }
+        
+        @keyframes mobileFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Touch feedback */
+        .touch-feedback {
+            transition: all 0.15s ease;
+        }
+        
+        .touch-feedback:active {
+            transform: scale(0.98);
+            opacity: 0.8;
+        }
+        
+        /* Native button styles */
+        .btn-primary {
+            background: linear-gradient(135deg, #3B82F6, #1E40AF);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+            border: none;
+            color: white;
+            font-weight: 600;
+            border-radius: 12px;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(59, 130, 246, 0.4);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: #374151;
+            font-weight: 500;
+            border-radius: 12px;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-secondary:active {
+            background: rgba(255, 255, 255, 0.7);
+            transform: translateY(1px);
+        }
+        
+        /* Mobile cards */
+        .mobile-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .mobile-card:active {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Bottom navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        
+        .nav-item {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 8px 4px;
+            min-height: 60px;
+            transition: all 0.2s ease;
+            border-radius: 12px;
+            margin: 4px;
+        }
+        
+        .nav-item.active {
+            background: linear-gradient(135deg, #3B82F6, #1E40AF);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        .nav-item:not(.active):active {
+            background: rgba(0, 0, 0, 0.05);
+            transform: scale(0.95);
+        }
+        
+        /* Mobile header */
+        .mobile-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Content area with bottom nav spacing */
+        .mobile-content {
+            padding-bottom: 80px;
+            min-height: 100vh;
+        }
+        
+        /* Voice recording animation */
+        .voice-recording {
+            background: radial-gradient(circle, #ef4444, #dc2626);
+            animation: voicePulse 1s infinite;
+        }
+        
+        @keyframes voicePulse {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+            }
+            50% { 
+                transform: scale(1.05); 
+                box-shadow: 0 0 0 10px rgba(239, 68, 68, 0);
+            }
+        }
+        
+        /* Floating action button */
+        .fab {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            border: none;
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            z-index: 999;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .fab:active {
+            transform: scale(0.9);
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.6);
+        }
+        
+        /* Modal optimizations for mobile */
+        .mobile-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            z-index: 2000;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .modal-header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        
+        /* Form optimizations */
+        .mobile-input {
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 16px;
+            font-size: 16px; /* Prevents zoom on iOS */
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+        
+        .mobile-input:focus {
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+            outline: none;
+        }
+        
+        /* Chat optimizations */
+        .chat-container {
+            height: calc(100vh - 200px);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: 16px;
+        }
+        
+        .chat-message {
+            max-width: 85%;
+            margin-bottom: 12px;
+            animation: chatSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes chatSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Progress indicators */
+        .progress-ring {
+            transform: rotate(-90deg);
+        }
+        
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        /* Haptic feedback simulation */
+        .haptic-light {
+            animation: hapticLight 0.1s ease-out;
+        }
+        
+        @keyframes hapticLight {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        /* Dark mode support */
+        @media (prefers-color-scheme: dark) {
+            .mobile-card {
+                background: rgba(31, 41, 55, 0.95);
+                border-color: rgba(75, 85, 99, 0.3);
+            }
+            
+            .bottom-nav {
+                background: rgba(31, 41, 55, 0.95);
+                border-top-color: rgba(75, 85, 99, 0.3);
+            }
+            
+            .mobile-header {
+                background: rgba(31, 41, 55, 0.95);
+                border-bottom-color: rgba(75, 85, 99, 0.3);
+            }
+        }
+        
+        /* Landscape optimizations */
+        @media (orientation: landscape) and (max-height: 500px) {
+            .mobile-content {
+                padding-bottom: 70px;
+            }
+            
+            .bottom-nav {
+                height: 60px;
+            }
+            
+            .nav-item {
+                min-height: 50px;
+                padding: 4px 2px;
+            }
+            
+            .fab {
+                bottom: 70px;
+                right: 16px;
+                width: 48px;
+                height: 48px;
+                font-size: 20px;
+            }
+        }
+        
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .mobile-card {
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            }
+        }
+        
+        /* Accessibility improvements */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* Calendar specific styles */
+        .calendar-day {
+            min-height: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .calendar-day.has-events::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: currentColor;
+            border-radius: 50%;
+            opacity: 0.7;
+        }
+        
+        .event-dots {
+            position: absolute;
+            bottom: 1px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 1px;
+        }
+        
+        .event-dot {
+            width: 3px;
+            height: 3px;
+            border-radius: 50%;
+        }
+        
+        /* Mobile calendar optimizations */
+        @media (max-width: 640px) {
+            .calendar-day {
+                min-height: 36px;
+                font-size: 14px;
+            }
+            
+            .event-dot {
+                width: 2px;
+                height: 2px;
+            }
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 2px;
+        }
+        
+        /* Loading states */
+        .loading-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Swipe gestures */
+        .swipeable {
+            touch-action: pan-x;
+        }
+        
+        /* Pull to refresh */
+        .pull-to-refresh {
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .pull-to-refresh.pulling {
+            transform: translateY(60px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans overflow-x-hidden">
+    <!-- Mobile Header -->
+    <header class="mobile-header safe-area-top">
+        <div class="px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo and Title -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 gradient-bg rounded-xl flex items-center justify-center">
+                        <span class="text-xl text-white">📚</span>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-gray-800">EduNotes Pro</h1>
+                        <p class="text-xs text-gray-500">Asistente Móvil</p>
+                    </div>
+                </div>
+                
+                <!-- Header Actions -->
+                <div class="flex items-center space-x-2">
+                    <!-- Share Button -->
+                    <button id="shareBtn" class="btn-secondary w-12 h-12 rounded-full touch-feedback">
+                        <span class="text-xl">📤</span>
+                    </button>
+                    
+                    <!-- Voice Button -->
+                    <button id="voiceBtn" class="btn-secondary w-12 h-12 rounded-full touch-feedback">
+                        <span id="voiceIcon" class="text-xl">🎤</span>
+                    </button>
+                    
+                    <!-- Profile -->
+                    <button id="profileBtn" class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center touch-feedback">
+                        <span class="text-lg">👩‍🏫</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="mobile-content">
+        <!-- Dashboard Tab -->
+        <div id="dashboard" class="tab-content p-4">
+            <!-- Welcome Card -->
+            <div class="gradient-bg rounded-2xl p-6 mb-6 text-white relative overflow-hidden mobile-fade-in">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full -mr-12 -mt-12"></div>
+                <div class="relative">
+                    <h2 class="text-2xl font-bold mb-2">¡Hola! 👋</h2>
+                    <p class="text-white/90 text-sm mb-4">Bienvenida de vuelta a EduNotes Pro</p>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                            <span class="text-white/80 text-xs">Sistema activo</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                            <span class="text-white/80 text-xs">IA disponible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="mobile-card p-4 touch-feedback">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl">👥</span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-2xl font-bold text-gray-800" id="totalStudents">24</p>
+                            <p class="text-xs text-gray-500">Estudiantes</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-green-500 text-xs font-semibold bg-green-100 px-2 py-1 rounded-full">↗ +3</span>
+                        <span class="text-gray-500 text-xs ml-2">este mes</span>
+                    </div>
+                </div>
+                
+                <div class="mobile-card p-4 touch-feedback">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl">🌍</span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-2xl font-bold text-gray-800" id="totalLanguages">12</p>
+                            <p class="text-xs text-gray-500">Idiomas</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-blue-500 text-xs font-semibold bg-blue-100 px-2 py-1 rounded-full">🔥 Popular</span>
+                    </div>
+                </div>
+                
+                <div class="mobile-card p-4 touch-feedback">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl">📝</span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-2xl font-bold text-gray-800" id="totalNotes">156</p>
+                            <p class="text-xs text-gray-500">Notas</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-purple-500 text-xs font-semibold bg-purple-100 px-2 py-1 rounded-full">📊 Organizadas</span>
+                    </div>
+                </div>
+                
+                <div class="mobile-card p-4 touch-feedback">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                            <span class="text-2xl">🎤</span>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-2xl font-bold text-gray-800" id="voiceUsage">89</p>
+                            <p class="text-xs text-gray-500">Comandos</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <span class="text-green-500 text-xs font-semibold bg-green-100 px-2 py-1 rounded-full">✅ Activo</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Calendar -->
+            <div class="mobile-card p-4 mb-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-lg font-bold text-gray-800">📅 Mi Calendario</h3>
+                    <button id="addEventBtn" class="btn-primary px-4 py-2 text-sm rounded-lg touch-feedback">
+                        + Evento
+                    </button>
+                </div>
+                
+                <!-- Calendar Header -->
+                <div class="flex items-center justify-between mb-4">
+                    <button id="prevMonth" class="btn-secondary w-10 h-10 rounded-full touch-feedback">
+                        <span class="text-lg">←</span>
+                    </button>
+                    <h4 id="currentMonth" class="text-lg font-semibold text-gray-800"></h4>
+                    <button id="nextMonth" class="btn-secondary w-10 h-10 rounded-full touch-feedback">
+                        <span class="text-lg">→</span>
+                    </button>
+                </div>
+                
+                <!-- Days of Week -->
+                <div class="grid grid-cols-7 gap-1 mb-2">
+                    <div class="text-center text-xs font-medium text-gray-500 py-2">Dom</div>
+                    <div class="text-center text-xs font-medium text-gray-500 py-2">Lun</div>
+                    <div class="text-center text-xs font-medium text-gray-500 py-2">Mar</div>
+                    <div class="text-center text-xs font-medium text-gray-500 py-2">Mié</div>
+                    <div class="text-center text-xs font-medium text-gray-500 py-2">Jue</div>
+                    <div class="text-center text-xs font-medium text-gray-500 py-2">Vie</div>
+                    <div class="text-center text-xs font-medium text-gray-500 py-2">Sáb</div>
+                </div>
+                
+                <!-- Calendar Grid -->
+                <div id="calendarGrid" class="grid grid-cols-7 gap-1 mb-4">
+                    <!-- Calendar days will be populated by JavaScript -->
+                </div>
+                
+                <!-- Selected Day Events -->
+                <div id="selectedDayEvents" class="border-t pt-4">
+                    <h5 class="font-semibold text-gray-800 mb-3" id="selectedDayTitle">Eventos de Hoy</h5>
+                    <div id="dayEventsList" class="space-y-2">
+                        <!-- Events for selected day will be populated -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="mobile-card p-4">
+                <h3 class="text-lg font-bold text-gray-800 mb-4">Acciones Rápidas</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <button class="btn-secondary p-4 rounded-xl touch-feedback" onclick="switchToTab('students')">
+                        <div class="text-center">
+                            <span class="text-2xl block mb-2">👥</span>
+                            <span class="text-sm font-medium">Estudiantes</span>
+                        </div>
+                    </button>
+                    <button class="btn-secondary p-4 rounded-xl touch-feedback" onclick="switchToTab('ai-languages')">
+                        <div class="text-center">
+                            <span class="text-2xl block mb-2">🌍</span>
+                            <span class="text-sm font-medium">IA Idiomas</span>
+                        </div>
+                    </button>
+                    <button class="btn-secondary p-4 rounded-xl touch-feedback" onclick="switchToTab('notes')">
+                        <div class="text-center">
+                            <span class="text-2xl block mb-2">📝</span>
+                            <span class="text-sm font-medium">Notas</span>
+                        </div>
+                    </button>
+                    <button class="btn-secondary p-4 rounded-xl touch-feedback" onclick="switchToTab('search')">
+                        <div class="text-center">
+                            <span class="text-2xl block mb-2">🔍</span>
+                            <span class="text-sm font-medium">Búsqueda</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Students Tab -->
+        <div id="students" class="tab-content hidden p-4">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-bold text-gray-800">Mis Estudiantes</h2>
+                <button id="addStudentBtn" class="btn-primary px-4 py-2 rounded-lg touch-feedback">
+                    + Agregar
+                </button>
+            </div>
+            
+            <div class="space-y-4" id="studentsGrid">
+                <!-- Student cards will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- AI Languages Tab -->
+        <div id="ai-languages" class="tab-content hidden">
+            <!-- Language Selection -->
+            <div class="p-4 bg-gradient-to-r from-blue-50 to-green-50 border-b">
+                <h3 class="text-lg font-bold text-gray-800 mb-3">Idiomas Disponibles</h3>
+                <div class="flex overflow-x-auto space-x-3 pb-2">
+                    <button class="language-btn flex-shrink-0 flex items-center p-3 bg-white rounded-xl border touch-feedback" data-lang="es">
+                        <span class="w-6 h-4 bg-red-500 rounded mr-2"></span>
+                        <span class="text-sm font-medium">Español</span>
+                    </button>
+                    <button class="language-btn flex-shrink-0 flex items-center p-3 bg-white rounded-xl border touch-feedback" data-lang="en">
+                        <span class="w-6 h-4 bg-blue-500 rounded mr-2"></span>
+                        <span class="text-sm font-medium">Inglés</span>
+                    </button>
+                    <button class="language-btn flex-shrink-0 flex items-center p-3 bg-white rounded-xl border touch-feedback" data-lang="fr">
+                        <span class="w-6 h-4 bg-blue-600 rounded mr-2"></span>
+                        <span class="text-sm font-medium">Francés</span>
+                    </button>
+                    <button class="language-btn flex-shrink-0 flex items-center p-3 bg-white rounded-xl border touch-feedback" data-lang="de">
+                        <span class="w-6 h-4 bg-yellow-500 rounded mr-2"></span>
+                        <span class="text-sm font-medium">Alemán</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Chat Area -->
+            <div class="chat-container" id="languageChatMessages">
+                <div class="chat-message">
+                    <div class="flex items-start space-x-3">
+                        <div class="w-10 h-10 gradient-bg rounded-full flex items-center justify-center">
+                            <span class="text-white text-lg">🌍</span>
+                        </div>
+                        <div class="mobile-card p-4 max-w-xs">
+                            <p class="text-sm">¡Hola! Soy tu asistente de idiomas. ¿En qué puedo ayudarte hoy?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Chat Input -->
+            <div class="fixed bottom-20 left-0 right-0 p-4 bg-white border-t safe-area-bottom">
+                <div class="flex space-x-3">
+                    <input type="text" id="languageChatInput" placeholder="Pregunta sobre idiomas..." 
+                           class="mobile-input flex-1">
+                    <button id="sendLanguageChatBtn" class="btn-primary w-12 h-12 rounded-full touch-feedback">
+                        <span class="text-lg">📤</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Notes Tab -->
+        <div id="notes" class="tab-content hidden p-4">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-bold text-gray-800">Mis Notas</h2>
+                <button id="addNoteBtn" class="btn-primary px-4 py-2 rounded-lg touch-feedback">
+                    + Nueva
+                </button>
+            </div>
+            
+            <div class="space-y-4" id="notesGrid">
+                <!-- Notes will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Search Tab -->
+        <div id="search" class="tab-content hidden p-4">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-4">Búsqueda</h2>
+                <div class="relative">
+                    <input type="text" id="globalSearchInput" placeholder="Buscar en todo..." 
+                           class="mobile-input pl-12">
+                    <div class="absolute left-4 top-4 text-gray-400">
+                        <span class="text-xl">🔍</span>
+                    </div>
+                    <button id="voiceSearchBtn" class="absolute right-4 top-4 text-gray-400 touch-feedback">
+                        <span class="text-xl">🎤</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Search Filters -->
+            <div class="mb-6">
+                <div class="flex space-x-2 overflow-x-auto pb-2">
+                    <button class="search-filter flex-shrink-0 btn-primary px-4 py-2 rounded-full text-sm touch-feedback" data-filter="all">
+                        Todos
+                    </button>
+                    <button class="search-filter flex-shrink-0 btn-secondary px-4 py-2 rounded-full text-sm touch-feedback" data-filter="notes">
+                        📝 Notas
+                    </button>
+                    <button class="search-filter flex-shrink-0 btn-secondary px-4 py-2 rounded-full text-sm touch-feedback" data-filter="students">
+                        👥 Estudiantes
+                    </button>
+                    <button class="search-filter flex-shrink-0 btn-secondary px-4 py-2 rounded-full text-sm touch-feedback" data-filter="languages">
+                        🌍 Idiomas
+                    </button>
+                </div>
+            </div>
+            
+            <div id="searchResults" class="space-y-4">
+                <div class="text-center py-12 text-gray-500">
+                    <span class="text-6xl mb-4 block">🔍</span>
+                    <p class="text-lg">Busca cualquier cosa</p>
+                    <p class="text-sm mt-2">Usa texto o comandos de voz</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Floating Action Button -->
+    <button id="fabBtn" class="fab touch-feedback">
+        <span>🎤</span>
+    </button>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav safe-area-bottom">
+        <div class="flex px-2 py-1">
+            <button class="nav-item active touch-feedback" data-tab="dashboard">
+                <span class="text-xl mb-1">📊</span>
+                <span class="text-xs font-medium">Inicio</span>
+            </button>
+            <button class="nav-item touch-feedback" data-tab="students">
+                <span class="text-xl mb-1">👥</span>
+                <span class="text-xs font-medium">Estudiantes</span>
+            </button>
+            <button class="nav-item touch-feedback" data-tab="ai-languages">
+                <span class="text-xl mb-1">🌍</span>
+                <span class="text-xs font-medium">IA</span>
+            </button>
+            <button class="nav-item touch-feedback" data-tab="notes">
+                <span class="text-xl mb-1">📝</span>
+                <span class="text-xs font-medium">Notas</span>
+            </button>
+            <button class="nav-item touch-feedback" data-tab="search">
+                <span class="text-xl mb-1">🔍</span>
+                <span class="text-xs font-medium">Buscar</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Modals -->
+    
+    <!-- Add Student Modal -->
+    <div id="studentModal" class="mobile-modal hidden">
+        <div class="modal-header safe-area-top">
+            <div class="flex items-center justify-between p-4">
+                <button id="cancelStudent" class="btn-secondary w-10 h-10 rounded-full touch-feedback">
+                    <span class="text-lg">←</span>
+                </button>
+                <h3 class="text-lg font-bold">Nuevo Estudiante</h3>
+                <button type="submit" form="studentForm" class="btn-primary px-4 py-2 rounded-lg text-sm touch-feedback">
+                    Guardar
+                </button>
+            </div>
+        </div>
+        
+        <div class="p-4">
+            <form id="studentForm" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Nombre completo</label>
+                    <input type="text" id="studentName" placeholder="Ej: Ana García" required class="mobile-input">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" id="studentEmail" placeholder="ana@email.com" required class="mobile-input">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Idioma principal</label>
+                    <select id="studentLanguage" required class="mobile-input">
+                        <option value="">Seleccionar idioma</option>
+                        <option value="Inglés">🇺🇸 Inglés</option>
+                        <option value="Francés">🇫🇷 Francés</option>
+                        <option value="Alemán">🇩🇪 Alemán</option>
+                        <option value="Italiano">🇮🇹 Italiano</option>
+                        <option value="Japonés">🇯🇵 Japonés</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Nivel</label>
+                    <select id="studentLevel" required class="mobile-input">
+                        <option value="">Seleccionar nivel</option>
+                        <option value="A1 - Principiante">A1 - Principiante</option>
+                        <option value="A2 - Básico">A2 - Básico</option>
+                        <option value="B1 - Intermedio">B1 - Intermedio</option>
+                        <option value="B2 - Intermedio Alto">B2 - Intermedio Alto</option>
+                        <option value="C1 - Avanzado">C1 - Avanzado</option>
+                        <option value="C2 - Nativo">C2 - Nativo</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Progreso Actual (%)</label>
+                    <input type="range" id="studentProgress" min="0" max="100" value="50" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer">
+                    <div class="flex justify-between text-xs text-gray-500 mt-1">
+                        <span>0%</span>
+                        <span id="progressValue" class="font-medium">50%</span>
+                        <span>100%</span>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Horario de Clase</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <select id="studentClassDay" required class="mobile-input">
+                            <option value="">Día</option>
+                            <option value="Lunes">Lunes</option>
+                            <option value="Martes">Martes</option>
+                            <option value="Miércoles">Miércoles</option>
+                            <option value="Jueves">Jueves</option>
+                            <option value="Viernes">Viernes</option>
+                        </select>
+                        <input type="time" id="studentClassTime" required class="mobile-input">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Dificultades</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <label class="flex items-center p-3 bg-gray-50 rounded-lg touch-feedback">
+                            <input type="checkbox" class="difficulty-checkbox mr-3" value="Pronunciación">
+                            <span class="text-sm">Pronunciación</span>
+                        </label>
+                        <label class="flex items-center p-3 bg-gray-50 rounded-lg touch-feedback">
+                            <input type="checkbox" class="difficulty-checkbox mr-3" value="Gramática">
+                            <span class="text-sm">Gramática</span>
+                        </label>
+                        <label class="flex items-center p-3 bg-gray-50 rounded-lg touch-feedback">
+                            <input type="checkbox" class="difficulty-checkbox mr-3" value="Vocabulario">
+                            <span class="text-sm">Vocabulario</span>
+                        </label>
+                        <label class="flex items-center p-3 bg-gray-50 rounded-lg touch-feedback">
+                            <input type="checkbox" class="difficulty-checkbox mr-3" value="Comprensión">
+                            <span class="text-sm">Comprensión</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Notas adicionales</label>
+                    <textarea id="studentNotes" placeholder="Observaciones sobre el estudiante..." rows="4" class="mobile-input"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Note Modal -->
+    <div id="noteModal" class="mobile-modal hidden">
+        <div class="modal-header safe-area-top">
+            <div class="flex items-center justify-between p-4">
+                <button id="cancelNote" class="btn-secondary w-10 h-10 rounded-full touch-feedback">
+                    <span class="text-lg">←</span>
+                </button>
+                <h3 class="text-lg font-bold">Nueva Nota</h3>
+                <button type="submit" form="noteForm" class="btn-primary px-4 py-2 rounded-lg text-sm touch-feedback">
+                    Guardar
+                </button>
+            </div>
+        </div>
+        
+        <div class="p-4">
+            <form id="noteForm" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Título</label>
+                    <input type="text" id="noteTitle" placeholder="Título de la nota" required class="mobile-input">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Categoría</label>
+                    <select id="noteCategory" class="mobile-input">
+                        <option value="General">📝 General</option>
+                        <option value="Idiomas">🌍 Idiomas</option>
+                        <option value="Estudiantes">👥 Estudiantes</option>
+                        <option value="Metodología">📚 Metodología</option>
+                        <option value="Recursos">📋 Recursos</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Contenido</label>
+                    <textarea id="noteContent" placeholder="Escribe tu nota aquí..." rows="8" required class="mobile-input"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Event Modal -->
+    <div id="eventModal" class="mobile-modal hidden">
+        <div class="modal-header safe-area-top">
+            <div class="flex items-center justify-between p-4">
+                <button id="cancelEvent" class="btn-secondary w-10 h-10 rounded-full touch-feedback">
+                    <span class="text-lg">←</span>
+                </button>
+                <h3 class="text-lg font-bold">Nuevo Evento</h3>
+                <button type="submit" form="eventForm" class="btn-primary px-4 py-2 rounded-lg text-sm touch-feedback">
+                    Guardar
+                </button>
+            </div>
+        </div>
+        
+        <div class="p-4">
+            <form id="eventForm" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Título del evento</label>
+                    <input type="text" id="eventTitle" placeholder="Ej: Clase de Inglés" required class="mobile-input">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Tipo</label>
+                    <select id="eventType" required class="mobile-input">
+                        <option value="">Seleccionar tipo</option>
+                        <option value="Clase">📚 Clase</option>
+                        <option value="Reunión">👥 Reunión</option>
+                        <option value="Evaluación">📊 Evaluación</option>
+                        <option value="Tutoría">🎯 Tutoría</option>
+                    </select>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Fecha</label>
+                        <input type="date" id="eventDate" required class="mobile-input">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Hora</label>
+                        <input type="time" id="eventStartTime" required class="mobile-input">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Ubicación</label>
+                    <input type="text" id="eventLocation" placeholder="Ej: Aula 205" class="mobile-input">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Descripción</label>
+                    <textarea id="eventDescription" placeholder="Detalles del evento..." rows="4" class="mobile-input"></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Share Modal -->
+    <div id="shareModal" class="mobile-modal hidden">
+        <div class="modal-header safe-area-top">
+            <div class="flex items-center justify-between p-4">
+                <button id="cancelShare" class="btn-secondary w-10 h-10 rounded-full touch-feedback">
+                    <span class="text-lg">←</span>
+                </button>
+                <h3 class="text-lg font-bold">Compartir App</h3>
+                <div></div>
+            </div>
+        </div>
+        
+        <div class="p-4 space-y-6">
+            <!-- QR Code -->
+            <div class="text-center">
+                <div class="bg-white p-6 rounded-2xl shadow-lg inline-block mb-4">
+                    <canvas id="qrCanvas" width="200" height="200" class="mx-auto"></canvas>
+                </div>
+                <p class="text-sm text-gray-600 mb-4">Escanea para instalar EduNotes Pro</p>
+                <button id="downloadQR" class="btn-primary px-6 py-3 rounded-xl touch-feedback">
+                    📥 Descargar QR
+                </button>
+            </div>
+            
+            <!-- Share Options -->
+            <div class="space-y-3">
+                <button id="shareWhatsApp" class="w-full btn-secondary p-4 rounded-xl touch-feedback">
+                    <div class="flex items-center justify-center space-x-3">
+                        <span class="text-2xl">💬</span>
+                        <span class="font-medium">Compartir por WhatsApp</span>
+                    </div>
+                </button>
+                
+                <button id="shareEmail" class="w-full btn-secondary p-4 rounded-xl touch-feedback">
+                    <div class="flex items-center justify-center space-x-3">
+                        <span class="text-2xl">📧</span>
+                        <span class="font-medium">Enviar por Email</span>
+                    </div>
+                </button>
+                
+                <button id="copyLink" class="w-full btn-secondary p-4 rounded-xl touch-feedback">
+                    <div class="flex items-center justify-center space-x-3">
+                        <span class="text-2xl">🔗</span>
+                        <span class="font-medium">Copiar Enlace</span>
+                    </div>
+                </button>
+                
+                <button id="shareNative" class="w-full btn-primary p-4 rounded-xl touch-feedback">
+                    <div class="flex items-center justify-center space-x-3">
+                        <span class="text-2xl">📤</span>
+                        <span class="font-medium">Compartir</span>
+                    </div>
+                </button>
+            </div>
+            
+            <!-- Instructions -->
+            <div class="bg-blue-50 p-4 rounded-xl">
+                <h4 class="font-bold text-blue-800 mb-2">📱 Cómo Instalar:</h4>
+                <div class="text-sm text-blue-700 space-y-2">
+                    <p><strong>Android:</strong> Abrir enlace → Menú → "Agregar a pantalla de inicio"</p>
+                    <p><strong>iOS:</strong> Abrir en Safari → Compartir → "Agregar a inicio"</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Global state
+        let currentUser = null;
+        let isAuthenticated = true; // For demo purposes
+        let currentDate = new Date();
+        let isRecording = false;
+        let recognition = null;
+        let currentLanguage = 'es';
+
+        // Sample data with more events
+        let events = [
+            {
+                id: 1,
+                title: "Clase de Inglés Avanzado",
+                type: "Clase",
+                date: new Date().toISOString().split('T')[0],
+                startTime: "10:00",
+                endTime: "11:30",
+                location: "Aula 205",
+                description: "Revisión de verbos irregulares"
+            },
+            {
+                id: 2,
+                title: "Tutoría - Ana García",
+                type: "Tutoría",
+                date: new Date().toISOString().split('T')[0],
+                startTime: "14:00",
+                endTime: "15:00",
+                location: "Oficina",
+                description: "Refuerzo en pronunciación"
+            },
+            {
+                id: 3,
+                title: "Clase de Francés Básico",
+                type: "Clase",
+                date: getDateString(1), // Tomorrow
+                startTime: "09:00",
+                endTime: "10:30",
+                location: "Aula 103",
+                description: "Introducción a los verbos"
+            },
+            {
+                id: 4,
+                title: "Reunión Padres",
+                type: "Reunión",
+                date: getDateString(2), // Day after tomorrow
+                startTime: "16:00",
+                endTime: "17:00",
+                location: "Sala de Juntas",
+                description: "Progreso estudiantes"
+            },
+            {
+                id: 5,
+                title: "Evaluación Alemán",
+                type: "Evaluación",
+                date: getDateString(3),
+                startTime: "11:00",
+                endTime: "12:30",
+                location: "Aula 201",
+                description: "Examen oral nivel B1"
+            }
+        ];
+
+        // Calendar state
+        let currentCalendarDate = new Date();
+        let selectedDate = new Date();
+
+        // Helper function to get date string
+        function getDateString(daysFromToday = 0) {
+            const date = new Date();
+            date.setDate(date.getDate() + daysFromToday);
+            return date.toISOString().split('T')[0];
+        }
+
+        let students = [
+            {
+                id: 1,
+                name: "Ana García",
+                email: "ana@email.com",
+                language: "Inglés",
+                level: "B1 - Intermedio",
+                progress: 75,
+                difficulties: ["Pronunciación", "Gramática"],
+                notes: "Muy dedicada, mejorando rápidamente",
+                classDay: "Lunes",
+                classTime: "10:00"
+            },
+            {
+                id: 2,
+                name: "Carlos Rodríguez",
+                email: "carlos@email.com",
+                language: "Francés",
+                level: "A2 - Básico",
+                progress: 60,
+                difficulties: ["Vocabulario"],
+                notes: "Necesita más práctica con verbos",
+                classDay: "Miércoles",
+                classTime: "14:30"
+            }
+        ];
+
+        let notes = [
+            {
+                id: 1,
+                title: "Verbos Irregulares Inglés",
+                category: "Idiomas",
+                content: "Lista de verbos irregulares más comunes: go-went-gone, see-saw-seen...",
+                date: new Date().toLocaleDateString()
+            },
+            {
+                id: 2,
+                title: "Progreso Ana García",
+                category: "Estudiantes",
+                content: "Ana ha mejorado significativamente en pronunciación...",
+                date: new Date().toLocaleDateString()
+            }
+        ];
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMobileApp();
+            initializeNavigation();
+            initializeVoiceRecognition();
+            initializeModals();
+            initializeLanguageChat();
+            initializeSearch();
+            initializeCalendar();
+            renderTodayEvents();
+            renderStudents();
+            renderNotes();
+            updateDashboardStats();
+            
+            // Set demo user
+            currentUser = {
+                firstName: 'Profesora',
+                lastName: 'Demo',
+                specialty: 'Idiomas'
+            };
+        });
+
+        // Mobile app initialization
+        function initializeMobileApp() {
+            // Add mobile-specific event listeners
+            document.addEventListener('touchstart', handleTouchStart, { passive: true });
+            document.addEventListener('touchmove', handleTouchMove, { passive: true });
+            document.addEventListener('touchend', handleTouchEnd, { passive: true });
+            
+            // Prevent zoom on double tap
+            let lastTouchEnd = 0;
+            document.addEventListener('touchend', function (event) {
+                const now = (new Date()).getTime();
+                if (now - lastTouchEnd <= 300) {
+                    event.preventDefault();
+                }
+                lastTouchEnd = now;
+            }, false);
+            
+            // Handle orientation changes
+            window.addEventListener('orientationchange', handleOrientationChange);
+            
+            // Add haptic feedback simulation
+            addHapticFeedback();
+            
+            // Initialize pull-to-refresh
+            initializePullToRefresh();
+        }
+
+        // Touch event handlers
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        function handleTouchStart(e) {
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        }
+
+        function handleTouchMove(e) {
+            // Handle swipe gestures here if needed
+        }
+
+        function handleTouchEnd(e) {
+            const touchEndX = e.changedTouches[0].clientX;
+            const touchEndY = e.changedTouches[0].clientY;
+            
+            const deltaX = touchEndX - touchStartX;
+            const deltaY = touchEndY - touchStartY;
+            
+            // Detect swipe gestures
+            if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+                if (deltaX > 0) {
+                    // Swipe right
+                    handleSwipeRight();
+                } else {
+                    // Swipe left
+                    handleSwipeLeft();
+                }
+            }
+        }
+
+        function handleSwipeRight() {
+            // Navigate to previous tab
+            const currentTab = document.querySelector('.nav-item.active');
+            const prevTab = currentTab.previousElementSibling;
+            if (prevTab) {
+                prevTab.click();
+            }
+        }
+
+        function handleSwipeLeft() {
+            // Navigate to next tab
+            const currentTab = document.querySelector('.nav-item.active');
+            const nextTab = currentTab.nextElementSibling;
+            if (nextTab) {
+                nextTab.click();
+            }
+        }
+
+        function handleOrientationChange() {
+            // Adjust layout for orientation changes
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+                adjustLayoutForOrientation();
+            }, 100);
+        }
+
+        function adjustLayoutForOrientation() {
+            const isLandscape = window.innerHeight < window.innerWidth;
+            const body = document.body;
+            
+            if (isLandscape) {
+                body.classList.add('landscape-mode');
+            } else {
+                body.classList.remove('landscape-mode');
+            }
+        }
+
+        function addHapticFeedback() {
+            // Add haptic feedback to buttons
+            document.querySelectorAll('.touch-feedback').forEach(element => {
+                element.addEventListener('touchstart', () => {
+                    // Simulate haptic feedback
+                    if (navigator.vibrate) {
+                        navigator.vibrate(10);
+                    }
+                    element.classList.add('haptic-light');
+                    setTimeout(() => {
+                        element.classList.remove('haptic-light');
+                    }, 100);
+                });
+            });
+        }
+
+        function initializePullToRefresh() {
+            let startY = 0;
+            let currentY = 0;
+            let isPulling = false;
+            
+            const content = document.querySelector('.mobile-content');
+            
+            content.addEventListener('touchstart', (e) => {
+                if (content.scrollTop === 0) {
+                    startY = e.touches[0].clientY;
+                    isPulling = true;
+                }
+            });
+            
+            content.addEventListener('touchmove', (e) => {
+                if (isPulling) {
+                    currentY = e.touches[0].clientY;
+                    const pullDistance = currentY - startY;
+                    
+                    if (pullDistance > 0 && pullDistance < 100) {
+                        content.style.transform = `translateY(${pullDistance * 0.5}px)`;
+                    }
+                }
+            });
+            
+            content.addEventListener('touchend', () => {
+                if (isPulling) {
+                    const pullDistance = currentY - startY;
+                    
+                    if (pullDistance > 60) {
+                        // Trigger refresh
+                        refreshData();
+                    }
+                    
+                    content.style.transform = 'translateY(0)';
+                    isPulling = false;
+                }
+            });
+        }
+
+        function refreshData() {
+            // Show loading indicator
+            showToast('Actualizando datos...', 'info');
+            
+            // Simulate data refresh
+            setTimeout(() => {
+                renderTodayEvents();
+                renderStudents();
+                renderNotes();
+                updateDashboardStats();
+                showToast('Datos actualizados', 'success');
+            }, 1000);
+        }
+
+        // Navigation
+        function initializeNavigation() {
+            const navItems = document.querySelectorAll('.nav-item');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const targetTab = item.dataset.tab;
+                    
+                    // Update active nav item
+                    navItems.forEach(nav => nav.classList.remove('active'));
+                    item.classList.add('active');
+
+                    // Show target content with animation
+                    tabContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    
+                    const targetContent = document.getElementById(targetTab);
+                    targetContent.classList.remove('hidden');
+                    targetContent.classList.add('mobile-fade-in');
+                    
+                    // Scroll to top
+                    window.scrollTo(0, 0);
+                });
+            });
+
+            // FAB functionality
+            document.getElementById('fabBtn').addEventListener('click', toggleVoiceRecognition);
+        }
+
+        function switchToTab(tabName) {
+            const navItem = document.querySelector(`[data-tab="${tabName}"]`);
+            if (navItem) {
+                navItem.click();
+            }
+        }
+
+        // Voice recognition
+        function initializeVoiceRecognition() {
+            if (!('webkitSpeechRecognition' in window) && !('SpeechRecognition' in window)) {
+                console.log('Speech recognition not supported');
+                return;
+            }
+
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'es-ES';
+
+            recognition.onstart = function() {
+                isRecording = true;
+                updateVoiceButtons();
+            };
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                handleVoiceCommand(transcript);
+            };
+
+            recognition.onend = function() {
+                isRecording = false;
+                updateVoiceButtons();
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Speech recognition error:', event.error);
+                isRecording = false;
+                updateVoiceButtons();
+                showToast('Error en reconocimiento de voz', 'error');
+            };
+
+            document.getElementById('voiceBtn').addEventListener('click', toggleVoiceRecognition);
+        }
+
+        function toggleVoiceRecognition() {
+            if (!recognition) {
+                showToast('Reconocimiento de voz no disponible', 'error');
+                return;
+            }
+
+            if (isRecording) {
+                recognition.stop();
+            } else {
+                recognition.start();
+                showToast('Escuchando...', 'info');
+            }
+        }
+
+        function updateVoiceButtons() {
+            const voiceIcon = document.getElementById('voiceIcon');
+            const fabBtn = document.getElementById('fabBtn');
+
+            if (isRecording) {
+                voiceIcon.textContent = '🔴';
+                fabBtn.innerHTML = '<span>🔴</span>';
+                fabBtn.classList.add('voice-recording');
+            } else {
+                voiceIcon.textContent = '🎤';
+                fabBtn.innerHTML = '<span>🎤</span>';
+                fabBtn.classList.remove('voice-recording');
+            }
+        }
+
+        function handleVoiceCommand(transcript) {
+            console.log('Voice command:', transcript);
+            
+            const command = transcript.toLowerCase();
+            
+            if (command.includes('estudiantes') || command.includes('alumnos')) {
+                switchToTab('students');
+                showToast('Mostrando estudiantes', 'success');
+            } else if (command.includes('notas')) {
+                switchToTab('notes');
+                showToast('Mostrando notas', 'success');
+            } else if (command.includes('idiomas') || command.includes('traducir')) {
+                switchToTab('ai-languages');
+                document.getElementById('languageChatInput').value = transcript;
+                sendLanguageMessage();
+            } else if (command.includes('buscar')) {
+                switchToTab('search');
+                document.getElementById('globalSearchInput').value = transcript.replace('buscar', '').trim();
+                performSearch();
+            } else {
+                // Default to language AI
+                switchToTab('ai-languages');
+                document.getElementById('languageChatInput').value = transcript;
+                sendLanguageMessage();
+            }
+        }
+
+        // Modals
+        function initializeModals() {
+            // Student modal
+            document.getElementById('addStudentBtn').addEventListener('click', () => {
+                showModal('studentModal');
+                document.getElementById('studentForm').reset();
+                document.getElementById('progressValue').textContent = '50%';
+            });
+
+            document.getElementById('cancelStudent').addEventListener('click', () => {
+                hideModal('studentModal');
+            });
+
+            // Progress slider
+            document.getElementById('studentProgress').addEventListener('input', (e) => {
+                document.getElementById('progressValue').textContent = e.target.value + '%';
+            });
+
+            document.getElementById('studentForm').addEventListener('submit', handleStudentSubmit);
+
+            // Note modal
+            document.getElementById('addNoteBtn').addEventListener('click', () => {
+                showModal('noteModal');
+                document.getElementById('noteForm').reset();
+            });
+
+            document.getElementById('cancelNote').addEventListener('click', () => {
+                hideModal('noteModal');
+            });
+
+            document.getElementById('noteForm').addEventListener('submit', handleNoteSubmit);
+
+            // Event modal
+            document.getElementById('addEventBtn').addEventListener('click', () => {
+                showModal('eventModal');
+                document.getElementById('eventForm').reset();
+                document.getElementById('eventDate').value = new Date().toISOString().split('T')[0];
+            });
+
+            document.getElementById('cancelEvent').addEventListener('click', () => {
+                hideModal('eventModal');
+            });
+
+            document.getElementById('eventForm').addEventListener('submit', handleEventSubmit);
+
+            // Share modal
+            document.getElementById('shareBtn').addEventListener('click', () => {
+                showModal('shareModal');
+                generateQRCode();
+            });
+
+            document.getElementById('cancelShare').addEventListener('click', () => {
+                hideModal('shareModal');
+            });
+
+            // Share functionality
+            document.getElementById('downloadQR').addEventListener('click', downloadQRCode);
+            document.getElementById('shareWhatsApp').addEventListener('click', shareWhatsApp);
+            document.getElementById('shareEmail').addEventListener('click', shareEmail);
+            document.getElementById('copyLink').addEventListener('click', copyLink);
+            document.getElementById('shareNative').addEventListener('click', shareNative);
+        }
+
+        function showModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            modal.classList.add('mobile-slide-up');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('hidden');
+            modal.classList.remove('mobile-slide-up');
+            document.body.style.overflow = 'auto';
+        }
+
+        function handleStudentSubmit(e) {
+            e.preventDefault();
+            
+            const difficulties = Array.from(document.querySelectorAll('.difficulty-checkbox:checked'))
+                .map(cb => cb.value);
+
+            const studentData = {
+                id: Date.now(),
+                name: document.getElementById('studentName').value,
+                email: document.getElementById('studentEmail').value,
+                language: document.getElementById('studentLanguage').value,
+                level: document.getElementById('studentLevel').value,
+                progress: parseInt(document.getElementById('studentProgress').value),
+                difficulties: difficulties,
+                notes: document.getElementById('studentNotes').value,
+                classDay: document.getElementById('studentClassDay').value,
+                classTime: document.getElementById('studentClassTime').value
+            };
+
+            students.push(studentData);
+            renderStudents();
+            updateDashboardStats();
+            hideModal('studentModal');
+            showToast('Estudiante agregado exitosamente', 'success');
+        }
+
+        function handleNoteSubmit(e) {
+            e.preventDefault();
+            
+            const noteData = {
+                id: Date.now(),
+                title: document.getElementById('noteTitle').value,
+                category: document.getElementById('noteCategory').value,
+                content: document.getElementById('noteContent').value,
+                date: new Date().toLocaleDateString()
+            };
+
+            notes.push(noteData);
+            renderNotes();
+            updateDashboardStats();
+            hideModal('noteModal');
+            showToast('Nota guardada exitosamente', 'success');
+        }
+
+        function handleEventSubmit(e) {
+            e.preventDefault();
+            
+            const eventData = {
+                id: Date.now(),
+                title: document.getElementById('eventTitle').value,
+                type: document.getElementById('eventType').value,
+                date: document.getElementById('eventDate').value,
+                startTime: document.getElementById('eventStartTime').value,
+                location: document.getElementById('eventLocation').value,
+                description: document.getElementById('eventDescription').value
+            };
+
+            // Check if editing existing event
+            const editId = document.getElementById('eventForm').dataset.editId;
+            if (editId) {
+                const eventIndex = events.findIndex(e => e.id == editId);
+                if (eventIndex !== -1) {
+                    events[eventIndex] = { ...eventData, id: parseInt(editId) };
+                    showToast('Evento actualizado exitosamente', 'success');
+                }
+                delete document.getElementById('eventForm').dataset.editId;
+            } else {
+                events.push(eventData);
+                showToast('Evento creado exitosamente', 'success');
+            }
+            
+            renderCalendar();
+            renderSelectedDayEvents();
+            renderTodayEvents();
+            hideModal('eventModal');
+        }
+
+        // Language AI Chat
+        function initializeLanguageChat() {
+            document.getElementById('sendLanguageChatBtn').addEventListener('click', sendLanguageMessage);
+            document.getElementById('languageChatInput').addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    sendLanguageMessage();
+                }
+            });
+
+            // Language selection
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentLanguage = btn.dataset.lang;
+                    
+                    // Update active language
+                    document.querySelectorAll('.language-btn').forEach(b => {
+                        b.classList.remove('bg-blue-100', 'border-blue-500');
+                    });
+                    btn.classList.add('bg-blue-100', 'border-blue-500');
+                    
+                    addLanguageChatMessage(`Idioma seleccionado: ${btn.textContent.trim()}`, 'system');
+                });
+            });
+        }
+
+        function sendLanguageMessage() {
+            const input = document.getElementById('languageChatInput');
+            const message = input.value.trim();
+            
+            if (!message) return;
+
+            addLanguageChatMessage(message, 'user');
+            input.value = '';
+
+            // Show typing indicator
+            addLanguageTypingIndicator();
+
+            setTimeout(() => {
+                removeLanguageTypingIndicator();
+                const response = generateLanguageResponse(message);
+                addLanguageChatMessage(response, 'ai');
+            }, 1000 + Math.random() * 1000);
+        }
+
+        function addLanguageChatMessage(message, sender) {
+            const chatMessages = document.getElementById('languageChatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'chat-message mobile-fade-in';
+
+            if (sender === 'user') {
+                messageDiv.innerHTML = `
+                    <div class="flex justify-end mb-3">
+                        <div class="bg-blue-500 text-white rounded-2xl rounded-br-md p-3 max-w-xs">
+                            <p class="text-sm">${message}</p>
+                        </div>
+                    </div>
+                `;
+            } else if (sender === 'system') {
+                messageDiv.innerHTML = `
+                    <div class="flex justify-center mb-3">
+                        <div class="bg-gray-100 rounded-full px-4 py-2">
+                            <p class="text-xs text-gray-600">${message}</p>
+                        </div>
+                    </div>
+                `;
+            } else {
+                messageDiv.innerHTML = `
+                    <div class="flex items-start space-x-3 mb-3">
+                        <div class="w-8 h-8 gradient-bg rounded-full flex items-center justify-center">
+                            <span class="text-white text-sm">🌍</span>
+                        </div>
+                        <div class="mobile-card p-3 max-w-xs">
+                            <div class="text-sm">${message}</div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addLanguageTypingIndicator() {
+            const chatMessages = document.getElementById('languageChatMessages');
+            const typingDiv = document.createElement('div');
+            typingDiv.id = 'languageTypingIndicator';
+            typingDiv.className = 'chat-message mobile-fade-in';
+            typingDiv.innerHTML = `
+                <div class="flex items-start space-x-3 mb-3">
+                    <div class="w-8 h-8 gradient-bg rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm">🌍</span>
+                    </div>
+                    <div class="mobile-card p-3">
+                        <div class="flex space-x-1">
+                            <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                            <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                            <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeLanguageTypingIndicator() {
+            const typingIndicator = document.getElementById('languageTypingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        function generateLanguageResponse(message) {
+            const lowerMessage = message.toLowerCase();
+            
+            if (lowerMessage.includes('hola') || lowerMessage.includes('hello')) {
+                return `<strong>🌍 Traducciones de "Hola":</strong><br><br>
+                        🇺🇸 <strong>Inglés:</strong> Hello, Hi<br>
+                        🇫🇷 <strong>Francés:</strong> Bonjour, Salut<br>
+                        🇩🇪 <strong>Alemán:</strong> Hallo, Guten Tag<br>
+                        🇯🇵 <strong>Japonés:</strong> こんにちは (Konnichiwa)`;
+            }
+            
+            if (lowerMessage.includes('gracias') || lowerMessage.includes('thank')) {
+                return `<strong>🙏 Formas de decir "Gracias":</strong><br><br>
+                        🇺🇸 <strong>Inglés:</strong> Thank you, Thanks<br>
+                        🇫🇷 <strong>Francés:</strong> Merci, Merci beaucoup<br>
+                        🇩🇪 <strong>Alemán:</strong> Danke, Vielen Dank<br>
+                        🇮🇹 <strong>Italiano:</strong> Grazie, Grazie mille`;
+            }
+            
+            return `<strong>🌍 Asistente de Idiomas</strong><br><br>
+                    Puedo ayudarte con:<br>
+                    • Traducciones instantáneas<br>
+                    • Pronunciación y fonética<br>
+                    • Gramática y conjugaciones<br>
+                    • Expresiones idiomáticas<br><br>
+                    ¿Qué te gustaría aprender?`;
+        }
+
+        // Search functionality
+        function initializeSearch() {
+            document.getElementById('globalSearchInput').addEventListener('input', performSearch);
+            document.getElementById('voiceSearchBtn').addEventListener('click', () => {
+                if (!recognition) return;
+                
+                recognition.onresult = function(event) {
+                    const transcript = event.results[0][0].transcript;
+                    document.getElementById('globalSearchInput').value = transcript;
+                    performSearch();
+                };
+                
+                recognition.start();
+            });
+
+            // Search filters
+            document.querySelectorAll('.search-filter').forEach(filter => {
+                filter.addEventListener('click', () => {
+                    document.querySelectorAll('.search-filter').forEach(f => {
+                        f.classList.remove('btn-primary');
+                        f.classList.add('btn-secondary');
+                    });
+                    filter.classList.add('btn-primary');
+                    filter.classList.remove('btn-secondary');
+                    
+                    performSearch();
+                });
+            });
+        }
+
+        function performSearch() {
+            const query = document.getElementById('globalSearchInput').value.toLowerCase().trim();
+            const activeFilter = document.querySelector('.search-filter.btn-primary').dataset.filter;
+            const resultsContainer = document.getElementById('searchResults');
+            
+            if (!query) {
+                resultsContainer.innerHTML = `
+                    <div class="text-center py-12 text-gray-500">
+                        <span class="text-6xl mb-4 block">🔍</span>
+                        <p class="text-lg">Busca cualquier cosa</p>
+                        <p class="text-sm mt-2">Usa texto o comandos de voz</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let results = [];
+
+            // Search logic (simplified for mobile)
+            if (activeFilter === 'all' || activeFilter === 'notes') {
+                const noteResults = notes.filter(note => 
+                    note.title.toLowerCase().includes(query) ||
+                    note.content.toLowerCase().includes(query)
+                ).map(note => ({
+                    type: 'note',
+                    title: note.title,
+                    content: note.content.substring(0, 80) + '...',
+                    icon: '📝'
+                }));
+                results = results.concat(noteResults);
+            }
+
+            if (activeFilter === 'all' || activeFilter === 'students') {
+                const studentResults = students.filter(student =>
+                    student.name.toLowerCase().includes(query) ||
+                    student.language.toLowerCase().includes(query)
+                ).map(student => ({
+                    type: 'student',
+                    title: student.name,
+                    content: `${student.language} - ${student.level}`,
+                    icon: '👤'
+                }));
+                results = results.concat(studentResults);
+            }
+
+            // Display results
+            if (results.length === 0) {
+                resultsContainer.innerHTML = `
+                    <div class="text-center py-12 text-gray-500">
+                        <span class="text-6xl mb-4 block">😔</span>
+                        <p class="text-lg">Sin resultados</p>
+                        <p class="text-sm mt-2">Intenta con otros términos</p>
+                    </div>
+                `;
+            } else {
+                resultsContainer.innerHTML = results.map(result => `
+                    <div class="mobile-card p-4 touch-feedback">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                                <span class="text-2xl">${result.icon}</span>
+                            </div>
+                            <div class="flex-1">
+                                <h4 class="font-semibold text-base mb-1">${result.title}</h4>
+                                <p class="text-gray-600 text-sm">${result.content}</p>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // QR Code Generation
+        function generateQRCode() {
+            const canvas = document.getElementById('qrCanvas');
+            const ctx = canvas.getContext('2d');
+            const appUrl = 'https://tuusuario.github.io/edunotespro'; // Replace with your actual URL
+            
+            // Simple QR code generation (for demo)
+            // In production, use a proper QR library like qrcode.js
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, 200, 200);
+            ctx.fillStyle = '#fff';
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('QR Code', 100, 100);
+            ctx.fillText('EduNotes Pro', 100, 120);
+            
+            // Create actual QR pattern (simplified)
+            drawQRPattern(ctx);
+        }
+
+        function drawQRPattern(ctx) {
+            ctx.fillStyle = '#000';
+            // Draw QR-like pattern
+            for (let i = 0; i < 20; i++) {
+                for (let j = 0; j < 20; j++) {
+                    if ((i + j) % 3 === 0) {
+                        ctx.fillRect(i * 10, j * 10, 8, 8);
+                    }
+                }
+            }
+            
+            // Corner squares
+            ctx.fillRect(10, 10, 30, 30);
+            ctx.fillRect(160, 10, 30, 30);
+            ctx.fillRect(10, 160, 30, 30);
+            
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(15, 15, 20, 20);
+            ctx.fillRect(165, 15, 20, 20);
+            ctx.fillRect(15, 165, 20, 20);
+        }
+
+        function downloadQRCode() {
+            const canvas = document.getElementById('qrCanvas');
+            const link = document.createElement('a');
+            link.download = 'edunotespro-qr.png';
+            link.href = canvas.toDataURL();
+            link.click();
+            showToast('QR descargado exitosamente', 'success');
+        }
+
+        function shareWhatsApp() {
+            const message = encodeURIComponent(`🎓 ¡Descarga EduNotes Pro! 
+
+Una increíble app para profesores de idiomas con:
+📚 Gestión de estudiantes
+🌍 IA para traducción
+📝 Notas organizadas
+🎤 Comandos de voz
+
+Instala aquí: https://tuusuario.github.io/edunotespro
+
+¡Es gratis y funciona offline! 📱`);
+            
+            window.open(`https://wa.me/?text=${message}`, '_blank');
+        }
+
+        function shareEmail() {
+            const subject = encodeURIComponent('🎓 EduNotes Pro - App para Profesores');
+            const body = encodeURIComponent(`¡Hola!
+
+Te comparto EduNotes Pro, una increíble aplicación móvil para profesores de idiomas.
+
+🌟 CARACTERÍSTICAS:
+• Gestión completa de estudiantes
+• IA para traducción de idiomas
+• Sistema de notas organizadas
+• Comandos de voz inteligentes
+• Funciona offline
+• Completamente gratis
+
+📱 INSTALACIÓN:
+1. Abre este enlace en tu móvil: https://tuusuario.github.io/edunotespro
+2. En Android: Menú → "Agregar a pantalla de inicio"
+3. En iOS: Compartir → "Agregar a inicio"
+
+¡Espero que te sea útil!
+
+Saludos`);
+            
+            window.open(`mailto:?subject=${subject}&body=${body}`, '_blank');
+        }
+
+        function copyLink() {
+            const url = 'https://tuusuario.github.io/edunotespro';
+            navigator.clipboard.writeText(url).then(() => {
+                showToast('Enlace copiado al portapapeles', 'success');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = url;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('Enlace copiado', 'success');
+            });
+        }
+
+        function shareNative() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'EduNotes Pro - App para Profesores',
+                    text: '🎓 Increíble app para profesores de idiomas con IA, gestión de estudiantes y más!',
+                    url: 'https://tuusuario.github.io/edunotespro'
+                }).then(() => {
+                    showToast('Compartido exitosamente', 'success');
+                }).catch(() => {
+                    copyLink(); // Fallback
+                });
+            } else {
+                copyLink(); // Fallback for browsers without native sharing
+            }
+        }
+
+        // Calendar functionality
+        function initializeCalendar() {
+            document.getElementById('prevMonth').addEventListener('click', () => {
+                currentCalendarDate.setMonth(currentCalendarDate.getMonth() - 1);
+                renderCalendar();
+            });
+
+            document.getElementById('nextMonth').addEventListener('click', () => {
+                currentCalendarDate.setMonth(currentCalendarDate.getMonth() + 1);
+                renderCalendar();
+            });
+
+            renderCalendar();
+            renderSelectedDayEvents();
+        }
+
+        function renderCalendar() {
+            const monthNames = [
+                'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+            ];
+
+            // Update month header
+            document.getElementById('currentMonth').textContent = 
+                `${monthNames[currentCalendarDate.getMonth()]} ${currentCalendarDate.getFullYear()}`;
+
+            // Get first day of month and number of days
+            const firstDay = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth(), 1);
+            const lastDay = new Date(currentCalendarDate.getFullYear(), currentCalendarDate.getMonth() + 1, 0);
+            const startDate = new Date(firstDay);
+            startDate.setDate(startDate.getDate() - firstDay.getDay());
+
+            const calendarGrid = document.getElementById('calendarGrid');
+            calendarGrid.innerHTML = '';
+
+            // Generate 42 days (6 weeks)
+            for (let i = 0; i < 42; i++) {
+                const currentDate = new Date(startDate);
+                currentDate.setDate(startDate.getDate() + i);
+                
+                const dayElement = createCalendarDay(currentDate, firstDay, lastDay);
+                calendarGrid.appendChild(dayElement);
+            }
+        }
+
+        function createCalendarDay(date, firstDay, lastDay) {
+            const dayElement = document.createElement('div');
+            const isCurrentMonth = date >= firstDay && date <= lastDay;
+            const isToday = date.toDateString() === new Date().toDateString();
+            const isSelected = date.toDateString() === selectedDate.toDateString();
+            const dateString = date.toISOString().split('T')[0];
+            const dayEvents = events.filter(event => event.date === dateString);
+            
+            dayElement.className = `
+                relative p-2 text-center text-sm cursor-pointer touch-feedback rounded-lg
+                ${isCurrentMonth ? 'text-gray-800' : 'text-gray-300'}
+                ${isToday ? 'bg-blue-500 text-white font-bold' : ''}
+                ${isSelected && !isToday ? 'bg-blue-100 text-blue-800 font-semibold' : ''}
+                ${dayEvents.length > 0 ? 'font-medium' : ''}
+            `;
+
+            dayElement.innerHTML = `
+                <div class="relative">
+                    ${date.getDate()}
+                    ${dayEvents.length > 0 ? `
+                        <div class="absolute -bottom-1 left-1/2 transform -translate-x-1/2">
+                            <div class="flex space-x-0.5">
+                                ${dayEvents.slice(0, 3).map(event => {
+                                    const colors = {
+                                        'Clase': 'bg-blue-400',
+                                        'Reunión': 'bg-green-400',
+                                        'Evaluación': 'bg-red-400',
+                                        'Tutoría': 'bg-purple-400'
+                                    };
+                                    return `<div class="w-1 h-1 ${colors[event.type] || 'bg-gray-400'} rounded-full"></div>`;
+                                }).join('')}
+                                ${dayEvents.length > 3 ? '<div class="w-1 h-1 bg-gray-600 rounded-full"></div>' : ''}
+                            </div>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+
+            dayElement.addEventListener('click', () => {
+                selectedDate = new Date(date);
+                renderCalendar();
+                renderSelectedDayEvents();
+            });
+
+            return dayElement;
+        }
+
+        function renderSelectedDayEvents() {
+            const selectedDateString = selectedDate.toISOString().split('T')[0];
+            const dayEvents = events.filter(event => event.date === selectedDateString);
+            
+            const title = document.getElementById('selectedDayTitle');
+            const eventsList = document.getElementById('dayEventsList');
+            
+            const isToday = selectedDate.toDateString() === new Date().toDateString();
+            const isTomorrow = selectedDate.toDateString() === new Date(Date.now() + 86400000).toDateString();
+            
+            let dayLabel = selectedDate.toLocaleDateString('es-ES', { 
+                weekday: 'long', 
+                day: 'numeric', 
+                month: 'long' 
+            });
+            
+            if (isToday) dayLabel = 'Hoy';
+            else if (isTomorrow) dayLabel = 'Mañana';
+            
+            title.textContent = `Eventos - ${dayLabel}`;
+
+            if (dayEvents.length === 0) {
+                eventsList.innerHTML = `
+                    <div class="text-center py-4 text-gray-500">
+                        <span class="text-2xl block mb-2">📅</span>
+                        <p class="text-sm">No hay eventos programados</p>
+                    </div>
+                `;
+                return;
+            }
+
+            eventsList.innerHTML = dayEvents.map(event => {
+                const typeIcons = {
+                    'Clase': '📚',
+                    'Reunión': '👥',
+                    'Evaluación': '📊',
+                    'Tutoría': '🎯'
+                };
+
+                const typeColors = {
+                    'Clase': 'bg-blue-50 border-blue-200 text-blue-800',
+                    'Reunión': 'bg-green-50 border-green-200 text-green-800',
+                    'Evaluación': 'bg-red-50 border-red-200 text-red-800',
+                    'Tutoría': 'bg-purple-50 border-purple-200 text-purple-800'
+                };
+
+                return `
+                    <div class="border rounded-lg p-3 ${typeColors[event.type] || 'bg-gray-50 border-gray-200 text-gray-800'} touch-feedback">
+                        <div class="flex items-start space-x-3">
+                            <span class="text-xl">${typeIcons[event.type] || '📝'}</span>
+                            <div class="flex-1 min-w-0">
+                                <h6 class="font-semibold text-sm truncate">${event.title}</h6>
+                                <p class="text-xs opacity-80 mb-1">
+                                    🕐 ${event.startTime} - ${event.endTime}
+                                </p>
+                                ${event.location ? `
+                                    <p class="text-xs opacity-80 mb-1">📍 ${event.location}</p>
+                                ` : ''}
+                                ${event.description ? `
+                                    <p class="text-xs opacity-70">${event.description}</p>
+                                ` : ''}
+                            </div>
+                            <button onclick="editEvent(${event.id})" class="text-xs opacity-60 hover:opacity-100 p-1">
+                                ✏️
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function editEvent(eventId) {
+            const event = events.find(e => e.id === eventId);
+            if (event) {
+                // Populate form with event data
+                document.getElementById('eventTitle').value = event.title;
+                document.getElementById('eventType').value = event.type;
+                document.getElementById('eventDate').value = event.date;
+                document.getElementById('eventStartTime').value = event.startTime;
+                document.getElementById('eventLocation').value = event.location || '';
+                document.getElementById('eventDescription').value = event.description || '';
+                
+                document.getElementById('eventForm').dataset.editId = eventId;
+                showModal('eventModal');
+            }
+        }
+
+        // Render functions
+        function renderTodayEvents() {
+            const today = new Date().toISOString().split('T')[0];
+            const todayEvents = events.filter(event => event.date === today);
+            const container = document.getElementById('todayEvents');
+            
+            if (todayEvents.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-6 text-gray-500">
+                        <span class="text-3xl block mb-2">📅</span>
+                        <p class="text-sm">No hay eventos para hoy</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = todayEvents.map(event => {
+                const typeIcons = {
+                    'Clase': '📚',
+                    'Reunión': '👥',
+                    'Evaluación': '📊',
+                    'Tutoría': '🎯'
+                };
+                
+                return `
+                    <div class="mobile-card p-3 touch-feedback">
+                        <div class="flex items-center space-x-3">
+                            <span class="text-2xl">${typeIcons[event.type] || '📝'}</span>
+                            <div class="flex-1">
+                                <p class="font-semibold text-sm">${event.title}</p>
+                                <p class="text-xs text-blue-600">${event.startTime} - ${event.endTime}</p>
+                                ${event.location ? `<p class="text-xs text-gray-500">📍 ${event.location}</p>` : ''}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function renderStudents() {
+            const studentsGrid = document.getElementById('studentsGrid');
+            studentsGrid.innerHTML = '';
+
+            students.forEach(student => {
+                const studentCard = createMobileStudentCard(student);
+                studentsGrid.appendChild(studentCard);
+            });
+        }
+
+        function createMobileStudentCard(student) {
+            const card = document.createElement('div');
+            card.className = 'mobile-card p-4 touch-feedback';
+            
+            const progressColor = student.progress >= 80 ? 'text-green-500' : 
+                                 student.progress >= 60 ? 'text-yellow-500' : 'text-red-500';
+
+            const languageFlags = {
+                'Inglés': '🇺🇸',
+                'Francés': '🇫🇷',
+                'Alemán': '🇩🇪',
+                'Italiano': '🇮🇹',
+                'Japonés': '🇯🇵'
+            };
+
+            card.innerHTML = `
+                <div class="flex items-center space-x-3 mb-3">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                        <span class="text-xl">👤</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-base">${student.name}</h4>
+                        <p class="text-sm text-gray-600">${student.level}</p>
+                    </div>
+                    <div class="text-right">
+                        <p class="${progressColor} font-bold text-lg">${student.progress}%</p>
+                    </div>
+                </div>
+                
+                <div class="mb-3 p-3 bg-blue-50 rounded-lg">
+                    <p class="text-sm font-medium text-blue-800">
+                        ${languageFlags[student.language] || '🌍'} ${student.language}
+                    </p>
+                    <p class="text-xs text-blue-600">📧 ${student.email}</p>
+                </div>
+                
+                <div class="mb-3">
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full transition-all duration-500" 
+                             style="width: ${student.progress}%"></div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <p class="text-sm font-medium text-gray-700 mb-2">Dificultades:</p>
+                    <div class="flex flex-wrap gap-1">
+                        ${student.difficulties.map(diff => 
+                            `<span class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded-full">${diff}</span>`
+                        ).join('')}
+                    </div>
+                </div>
+                
+                <div class="mb-3 p-3 bg-green-50 rounded-lg">
+                    <p class="text-sm font-medium text-green-800">📅 ${student.classDay} - ${student.classTime}</p>
+                </div>
+                
+                <p class="text-sm text-gray-600 mb-3">${student.notes}</p>
+                
+                <div class="flex space-x-2">
+                    <button onclick="editStudent(${student.id})" 
+                            class="flex-1 btn-primary py-2 text-sm rounded-lg touch-feedback">
+                        Editar
+                    </button>
+                    <button onclick="deleteStudent(${student.id})" 
+                            class="btn-secondary px-4 py-2 text-sm rounded-lg touch-feedback">
+                        🗑️
+                    </button>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function renderNotes() {
+            const notesGrid = document.getElementById('notesGrid');
+            notesGrid.innerHTML = '';
+
+            notes.forEach(note => {
+                const noteCard = createMobileNoteCard(note);
+                notesGrid.appendChild(noteCard);
+            });
+        }
+
+        function createMobileNoteCard(note) {
+            const card = document.createElement('div');
+            card.className = 'mobile-card p-4 touch-feedback';
+            
+            const categoryColors = {
+                'General': 'bg-gray-100 text-gray-800',
+                'Idiomas': 'bg-green-100 text-green-800',
+                'Estudiantes': 'bg-blue-100 text-blue-800',
+                'Metodología': 'bg-purple-100 text-purple-800'
+            };
+
+            card.innerHTML = `
+                <div class="flex justify-between items-start mb-3">
+                    <h4 class="font-semibold text-base flex-1 mr-2">${note.title}</h4>
+                    <span class="${categoryColors[note.category]} text-xs px-2 py-1 rounded-full">
+                        ${note.category}
+                    </span>
+                </div>
+                
+                <p class="text-gray-600 text-sm mb-3 line-clamp-3">
+                    ${note.content.substring(0, 120)}${note.content.length > 120 ? '...' : ''}
+                </p>
+                
+                <div class="flex justify-between items-center">
+                    <span class="text-xs text-gray-500">${note.date}</span>
+                    <div class="flex space-x-2">
+                        <button onclick="editNote(${note.id})" 
+                                class="btn-primary px-3 py-1 text-xs rounded touch-feedback">
+                            Editar
+                        </button>
+                        <button onclick="deleteNote(${note.id})" 
+                                class="btn-secondary px-3 py-1 text-xs rounded touch-feedback">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function editStudent(id) {
+            const student = students.find(s => s.id === id);
+            if (student) {
+                // Populate form with student data
+                document.getElementById('studentName').value = student.name;
+                document.getElementById('studentEmail').value = student.email;
+                document.getElementById('studentLanguage').value = student.language;
+                document.getElementById('studentLevel').value = student.level;
+                document.getElementById('studentProgress').value = student.progress;
+                document.getElementById('progressValue').textContent = student.progress + '%';
+                document.getElementById('studentNotes').value = student.notes;
+                document.getElementById('studentClassDay').value = student.classDay;
+                document.getElementById('studentClassTime').value = student.classTime;
+                
+                // Set difficulties
+                document.querySelectorAll('.difficulty-checkbox').forEach(checkbox => {
+                    checkbox.checked = student.difficulties.includes(checkbox.value);
+                });
+                
+                document.getElementById('studentForm').dataset.editId = id;
+                showModal('studentModal');
+            }
+        }
+
+        function deleteStudent(id) {
+            if (confirm('¿Eliminar este estudiante?')) {
+                students = students.filter(s => s.id !== id);
+                renderStudents();
+                updateDashboardStats();
+                showToast('Estudiante eliminado', 'success');
+            }
+        }
+
+        function editNote(id) {
+            const note = notes.find(n => n.id === id);
+            if (note) {
+                document.getElementById('noteTitle').value = note.title;
+                document.getElementById('noteCategory').value = note.category;
+                document.getElementById('noteContent').value = note.content;
+                
+                document.getElementById('noteForm').dataset.editId = id;
+                showModal('noteModal');
+            }
+        }
+
+        function deleteNote(id) {
+            if (confirm('¿Eliminar esta nota?')) {
+                notes = notes.filter(n => n.id !== id);
+                renderNotes();
+                updateDashboardStats();
+                showToast('Nota eliminada', 'success');
+            }
+        }
+
+        function updateDashboardStats() {
+            document.getElementById('totalStudents').textContent = students.length;
+            document.getElementById('totalNotes').textContent = notes.length;
+        }
+
+        // Toast notifications
+        function showToast(message, type = 'info') {
+            const toast = document.createElement('div');
+            toast.className = `fixed top-20 left-4 right-4 p-4 rounded-xl shadow-lg z-50 mobile-fade-in safe-area-top`;
+            
+            const colors = {
+                success: 'bg-green-500 text-white',
+                error: 'bg-red-500 text-white',
+                info: 'bg-blue-500 text-white',
+                warning: 'bg-yellow-500 text-black'
+            };
+            
+            toast.classList.add(...colors[type].split(' '));
+            toast.innerHTML = `
+                <div class="flex items-center justify-between">
+                    <span class="font-medium">${message}</span>
+                    <button onclick="this.parentElement.parentElement.remove()" class="ml-4 text-lg">✕</button>
+                </div>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                if (toast.parentElement) {
+                    toast.remove();
+                }
+            }, 3000);
+        }
+
+        // Service Worker Registration (for PWA)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'984e652576d3d1ac',t:'MTc1ODg0MzkyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
